@@ -1,0 +1,105 @@
+swagger: "2.0"
+info:
+  description: "PPM Account Adapter"
+  version: "1.0.0"
+  title: "PPM Account Adapter"
+tags:
+- name: "accounts"
+  description: "Everything about account adapter"
+schemes:
+- "https"
+- "http"
+paths:
+  /v1/admin:
+    get:
+      tags:
+      - "accounts"
+      summary: "get an account"
+      description: "get account"
+      operationId: "getAccount"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        type: "string"
+        description: "token of account"
+        required: true
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Account"
+        400:
+          description: "Invalid input"
+        500:
+          description: "Internal server error"
+  /v1/login/:
+    post:
+      tags:
+      - "accounts"
+      summary: "login and recieve token"
+      description: "login and recieve token"
+      operationId: "login"
+      produces:
+      - "text/plain"
+      parameters:
+      - in: "query"
+        name: "username"
+        description: "username of a account"
+        required: true
+        type: "string"
+      - in: "query"
+        name: "password"
+        description: "password of a account"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "string"
+        400:
+          description: "Invalid input"
+        500:
+          description: "Internal server error"
+  /v1/register/:
+    post:
+      tags:
+      - "accounts"
+      summary: "register an account"
+      description: "register an account"
+      operationId: "addAccount"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "account"
+        schema:
+          $ref: "#/definitions/Account"
+        description: "body of account"
+        required: true
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "string"
+        400:
+          description: "Invalid input"
+        500:
+          description: "Internal server error"
+definitions:
+  Account:
+    type: "object"
+    properties:
+      id:
+        type: "number"
+        format: "long"
+      username:
+        type: "string"
+        example: "minhducnguyen189"
+      password:
+        type: "string"
+        example: "123456"

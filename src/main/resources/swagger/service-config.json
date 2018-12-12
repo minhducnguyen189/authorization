@@ -1,0 +1,13 @@
+{
+  "artifactId": "authorization",
+  "basePackage": "com.dxc.authorization",
+  "apiPackage": "com.dxc.authorization.api",
+  "configPackage": "com.dxc.authorization.api.config",
+  "modelPackage": "com.dxc.authorization.api.model",
+  "delegatePattern": "true",
+  "hideGenerationTimestamp": "true",
+  "useBeanValidation": "true",
+  "dateLibrary": "joda",
+  "sourceFolder": "generated-sources/src/main/java"
+}
+
