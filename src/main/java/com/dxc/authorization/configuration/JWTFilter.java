@@ -3,6 +3,7 @@ package com.dxc.authorization.configuration;
 import com.dxc.authorization.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.filter.GenericFilterBean;
 
 
@@ -18,6 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Configuration
+@CrossOrigin(origins = "*")
 public class JWTFilter extends GenericFilterBean {
 
     @Autowired
@@ -60,8 +62,8 @@ public class JWTFilter extends GenericFilterBean {
 
     public boolean AllowRequestWithoutToken(HttpServletRequest request) {
         System.out.println(request.getRequestURI());
-        if(request.getRequestURI().contains("/v1/register/")
-                || request.getRequestURI().contains("/v1/login/")
+        if(request.getRequestURI().contains("/v1/register")
+                || request.getRequestURI().contains("/v1/login")
                 || request.getRequestURI().contains("/v2/api-docs")
                 || request.getRequestURI().contains("/configuration/ui")
                 || request.getRequestURI().contains("/swagger-resources")

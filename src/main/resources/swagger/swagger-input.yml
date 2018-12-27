@@ -34,7 +34,7 @@ paths:
           description: "Invalid input"
         500:
           description: "Internal server error"
-  /v1/login/:
+  /v1/login:
     post:
       tags:
       - "accounts"
@@ -63,7 +63,7 @@ paths:
           description: "Invalid input"
         500:
           description: "Internal server error"
-  /v1/register/:
+  /v1/register:
     post:
       tags:
       - "accounts"

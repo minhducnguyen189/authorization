@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<spring-cloud.version>Edgware.SR5</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -79,7 +80,43 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.8.8</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.ge.predix</groupId>
+			<artifactId>spring-cors-filter</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- eureka -->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud</groupId>-->
+			<!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>io.springfox</groupId>-->
+			<!--<artifactId>springfox-swagger2</artifactId>-->
+			<!--<version>2.6.1</version>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>io.springfox</groupId>-->
+			<!--<artifactId>springfox-swagger-ui</artifactId>-->
+			<!--<version>2.6.1</version>-->
+		<!--</dependency>-->
 	</dependencies>
+
+	<!--<dependencyManagement>-->
+		<!--<dependencies>-->
+			<!--<dependency>-->
+				<!--<groupId>org.springframework.cloud</groupId>-->
+				<!--<artifactId>spring-cloud-dependencies</artifactId>-->
+				<!--<version>${spring-cloud.version}</version>-->
+				<!--<type>pom</type>-->
+				<!--<scope>import</scope>-->
+			<!--</dependency>-->
+		<!--</dependencies>-->
+	<!--</dependencyManagement>-->
 
 	<build>
 		<plugins>
